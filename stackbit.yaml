@@ -1,0 +1,166 @@
+stackbitVersion: ~0.3.0
+ssgName: nextjs
+nodeVersion: '12'
+publishDir: out
+dataDir: seeds
+models:
+  assets:
+    type: data
+    label: Assets
+    file: assets.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: link
+          label: Link
+        - type: image
+          name: filename
+          label: Filename
+        - type: image
+          name: url
+          label: Url
+  categories:
+    type: data
+    label: Categories
+    file: categories.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: slug
+          label: Slug
+        - type: string
+          name: name
+          label: Name
+  products:
+    type: data
+    label: Products
+    file: products.json
+    isList: true
+    items:
+      type: model
+      models:
+        - object_z9356dak28
+        - object_kjpx89hna7
+  object_z9356dak28:
+    type: object
+    label: Object 1
+    fields:
+      - type: object
+        name: product
+        label: Product
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: description
+            label: Description
+          - type: string
+            name: price
+            label: Price
+          - type: string
+            name: category_id
+            label: Category Id
+          - type: boolean
+            name: active
+            label: Active
+      - type: list
+        name: extra_field
+        label: Extra Field
+        items:
+          type: object
+          fields:
+            - type: string
+              name: name
+              label: Name
+            - type: boolean
+              name: required
+              label: Required
+      - type: object
+        name: collect
+        label: Collect
+        fields:
+          - type: boolean
+            name: fullname
+            label: Fullname
+          - type: boolean
+            name: billing
+            label: Billing
+      - type: object
+        name: seo
+        label: Seo
+        fields:
+          - type: string
+            name: title
+            label: Title
+          - type: string
+            name: description
+            label: Description
+  object_kjpx89hna7:
+    type: object
+    label: Object 2
+    fields:
+      - type: object
+        name: product
+        label: Product
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: description
+            label: Description
+          - type: string
+            name: price
+            label: Price
+          - type: string
+            name: category_id
+            label: Category Id
+      - type: list
+        name: variant
+        label: Variant
+        items:
+          type: object
+          fields:
+            - type: string
+              name: name
+              label: Name
+            - type: list
+              name: options
+              label: Options
+              items:
+                type: object
+                fields:
+                  - type: string
+                    name: description
+                    label: Description
+                  - type: string
+                    name: quantity
+                    label: Quantity
+                  - type: string
+                    name: price
+                    label: Price
+      - type: object
+        name: collect
+        label: Collect
+        fields:
+          - type: boolean
+            name: billing
+            label: Billing
+          - type: boolean
+            name: fullname
+            label: Fullname
+      - type: object
+        name: seo
+        label: Seo
+        fields:
+          - type: string
+            name: title
+            label: Title
+          - type: string
+            name: description
+            label: Description
